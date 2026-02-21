@@ -31,6 +31,8 @@ jobs:
         if: env.IS_FORK == 'true'
         uses: actions/github-script@v8
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+        with:
           script: |
             const { owner, repo, number } = context.issue;
             
